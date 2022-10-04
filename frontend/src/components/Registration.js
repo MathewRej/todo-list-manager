@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import '../index.css';
 import './registration.css'
+import axios from 'axios'
+import swal from 'sweetalert';
 
 const Register = () => {
     const [values, setValues] = useState(
@@ -81,6 +83,20 @@ const Register = () => {
             password,
             confirmPassword
         })
+        if (name === '' && email === '' && password === '' && confirmPassword === '') {
+            axios({
+                method: 'post',
+                url: 'http://127.0.0.1:5000/register',
+                data: values
+            }).then((resp) => {
+                swal({ text: resp.data.message, showCancelButton: true }).then(function () { window.location = "http://localhost:3000/login"; });
+            }).catch((e) => {
+                if (e.response.status === 409) {
+                    swal({ text: "User is already exists" })
+                }
+            })
+
+        }
     }
 
         return (
