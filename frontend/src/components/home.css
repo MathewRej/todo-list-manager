@@ -1,0 +1,50 @@
+.home-maindiv {
+  height: 100vh;
+  background-image: url('../images/pexels-johannes-plenio-1103970.jpg');
+  background-size: cover;
+}
+
+.todolist-quotes {
+  font-feature-settings: "smcp";
+  font-variant: small-caps;
+  color: #484646;
+  margin: 10px;
+
+}
+
+.todolist-quotes:hover {
+  font-size: 40px;
+
+}
+
+.signup-button {
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  border: 2px solid black !important;
+  height: 60px !important;
+  width: 150px;
+  margin: 10px;
+}
+
+.signup-button:hover {
+  font-size: 30px;
+
+}
+
+.signuplink{
+  text-decoration: none !important;
+  color: black;
+}
+
+.signup-guestbutton{
+  height: 60px !important;
+  background-color: transparent !important;
+  background-repeat:no-repeat !important;
+  border: 2px solid black !important; 
+  width: 300px;
+  color: #1976d2;
+
+}
+.signup-guestbutton :hover{
+  font-size: 25px;
+}
