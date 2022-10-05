@@ -1,0 +1,614 @@
+.sidebar {
+    background-color: lightgray;
+    height: auto;
+  }
+  
+  .sidebar-bottom-content {
+    margin: 55px;
+    margin-top: 250px;
+  }
+  
+  .home-link {
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+    color: rgb(19, 19, 19);
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  
+  .logout-link {
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+    color: rgb(19, 19, 19);
+    font-weight: 500;
+    margin-left: 5px;
+  
+  }
+  
+  .home-div {
+    text-align: left;
+    display: flex;
+  }
+  
+  .logout-div {
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+  }
+  
+  .table-div {
+    display: flex;
+    justify-content: center;
+    width: 900px !important;
+    margin-top: 30px;
+    align-content: center;
+  }
+  
+  .table thead {
+    border: solid rgb(75, 74, 74) 1px;
+    height: 40px;
+    text-align: center;
+    background-color:#1976d2;;
+  }
+  
+  .table td {
+    text-align: center;
+    border: solid rgb(75, 74, 74) 1px;
+    height: 30px;
+  }
+  
+  .sidebar-list {
+    margin-top: 50px;
+  }
+  
+  .sidebar-list-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+    font-weight: bold;
+    ;
+    text-decoration: none;
+    color: rgb(19, 19, 19);
+  
+  }
+  
+  .sidebarcontent-div {
+    text-align: left;
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  .sidebarcontent-div h3 {
+    margin-top: 10px;
+  }
+  
+  .addicon-btn {
+    margin: 5px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+  
+  }
+  
+  .addbutton-todolist {
+    text-align: center;
+    height: 40px;
+    width: 70px;
+    border-radius: 20px;
+  }
+  
+  .todolist-heading {
+    text-align: center;
+  }
+  
+  .addtodo-field {
+    height: 40px;
+    width: 300px;
+    padding: 5px 10px;
+    margin: 10px 0px;
+    border-radius: 20px;
+  }
+  
+  .addtodo-div {
+    text-align: center;
+  }
+  
+  .todobtn-div {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .modal-main {
+    font-size: 150%;
+  }
+  
+  .todo-lists {
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+    color: black;
+  }
+  
+  .additem-div {
+    display: flex;
+   
+  }
+  .additem-div h3{
+    margin: 15px;
+    font-family: ui-serif;
+  }
+  .user-content-div h2 {
+    text-align: left;
+    margin: 20px;
+  }
+  
+  .content-div {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .additem-btn-div {
+    margin: 10px;
+  }
+  
+  .additem-div ul {
+    margin-top: 20px;
+  
+  }
+  
+  .additem-btn {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+  }
+  
+  .additem-field {
+    height: 40px;
+    width: 300px;
+    padding: 5px 10px;
+    margin: 10px 0px;
+    border-radius: 20px;
+  }
+  
+  .modal-content-div {
+    text-align: center;
+  
+  }
+  
+  .modal-main h3 {
+    text-align: center;
+  }
+  
+  .radio-btn-div {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .radiobtn-field {
+    margin: 10px !important;
+  }
+  
+  .privacy-label {
+    margin: 10px;
+  }
+  
+  .errormessage-div {
+    text-align: center;
+  }
+  
+  .modal-main {
+    font-size: 100%;
+  }
+  .goback-link a{
+    text-decoration: none;
+    color: white;
+  }
+  .goback-link{
+    margin: 10px;
+  }
+  .additem-modalbtn {
+    border: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    margin: 10px;
+  }
+  
+  .todolist-name {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+  
+    text-decoration: none !important;
+    color: rgb(223, 217, 217);
+    margin: 10px;
+    font-weight: 300;
+  }
+  
+  .selected-todolist {
+    color: blue;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    text-decoration: none !important;
+    color: white;
+    margin: 10px;
+    font-weight: 500;
+  }
+  
+  .user-task-table {
+    width: 00px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+  
+  .user-task-table-1st-row {
+    background-color: rgb(180, 184, 184);
+    border-radius: 10px;
+    height: 30px;
+  }
+  
+  .user-task-table-content {
+    background-color: rgb(200, 204, 204);
+  }
+  
+  .delete-btn {
+    margin: 5px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+  }
+  
+  .delete-btn-disudo nano /etc/gdm3/custom.conf v {
+    margin: 10px;
+  }
+  
+  .todolist-name-div {
+    display: flex;
+    text-align: start;
+    font-size: large;
+  }
+  
+  .logout-button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+  }
+  
+  .todolist-privacy-private {
+    font-size: 60%;
+    color: rgb(202, 0, 0);
+    padding: 10px;
+  
+  
+  }
+  
+  .todolist-privacy-public {
+    font-size: 60%;
+    color: green;
+    padding: 10px;
+  
+  }
+  
+  
+  
+  
+  
+  .navbar-div {
+    background-color: #161618;
+  
+  }
+  
+  .navbar-content h1 {
+    color: white;
+    margin: 10px;
+    font-weight: bold;
+  
+  }
+  
+  .navbar-content {
+    display: flex;
+  }
+  
+  .todoicon-div {
+    margin: 10px;
+    margin-top: 15px;
+  }
+  
+  .usericon-div {
+    text-align: -webkit-center;
+    margin: 15px;
+    display: flex;
+  }
+  
+  .usericon-btn {
+    margin: 5px
+  }
+  
+  .usericon-div h3 {
+    color: white;
+    margin: 10px;
+  }
+  
+  .navitem-dropdown {
+    margin: 5px;
+    font-size: 150%;
+  }
+  
+  .dropdown {
+    font-size: 150%;
+  }
+  
+  
+  
+  
+  .dropbtn {
+    color: white;
+    font-size: 16px;
+    border: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 40px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #1976d2;
+  }
+  
+  .sidebar-div {
+    width: auto;
+    height: 100vh;
+    /* background-color: #222121; */
+    background-image: url('../images/dlqRGHA-abstract-wallpaper-hd.jpg');
+    background-size: 1200%;
+  
+    border-top: 2px solid #1976d2;
+    border-right: 2px solid white;
+  }
+  
+  .sidebar-heading h2 {
+    color: white;
+    text-align: center;
+    margin: 40px;
+    font-weight: 300;
+  
+  }
+  .sidebar-heading h4 {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 100;
+    margin: 10px;
+    font-size: 20px;
+    font-style: italic;
+   
+  }
+  
+  .addtodolist-div h3 {
+    color: white;
+    margin: 8px;
+    font-weight: 100;
+  
+  }
+  
+  .addtodolist-div {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+  }
+  
+  .logout-btn {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    width: 160 px;
+    padding: 0px !important;
+  }
+  
+  .addicon-btn {
+    margin-left: 5px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+  
+  }
+  
+  .todolist-privacy {
+    margin-left: 40px;
+  }
+  
+  .todolist-data-div {
+    display: flex;
+  }
+  
+  .userpage {
+    padding: 0px !important;
+  
+  }
+  
+  .userpage-div {
+    display: flex;
+  }
+  
+  .dropdown-div {
+    font-size: medium !important;
+    width: 160px !important;
+  }
+  
+  .guest-table th {
+    background-color: #afaeae;
+    width: 2800px;
+    height: 30px;
+    border-bottom: 2px solid white;
+  }
+  
+  .guest-table td {
+    background-color: #cecccc;
+    border-bottom: 2px solid white;
+  }
+  
+  .todolist-name-link {
+    text-decoration: none;
+  }
+  
+  .guestsidebar p {
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    margin: 40px;
+    
+  }
+  
+
+  
+  .addtodolist-div h4 {
+    color: white;
+    font-family: cursive;
+  
+  }
+
+  .todolist-ul {
+    margin: 25px;
+  }
+  .enddate-task{
+    margin: 10px;
+  
+  }
+  
+  .usercontent-table {
+    width: 100%;
+  
+  }
+  
+  .usertable-head {
+    height: 30px;
+    background-color: rgb(26, 24, 27);
+    color: #e2e1e1;
+    font-weight: bold;
+    font-size: medium;
+  }
+  
+  .usercontent-table td {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  
+  .usercontent-table tr {
+    border-bottom: 1px solid white;
+  }
+  
+  .task-delete-btn {
+    background-color: rgb(220, 20, 60);
+    color: white;
+    width: 40px;
+    height: 18px;
+    border: 1px solid rgb(160, 158, 158);
+    font-size: x-small;
+  }
+  
+  
+  
+  .task-finish-btn {
+    background-color: rgb(0, 158, 96);
+    color: white;
+    width: 40px;
+    height: 18px;
+    border: 1px solid rgb(160, 158, 158);
+    font-size: x-small;
+  }
+  
+  .task-pending-finish-btn {
+    background-color: rgb(0, 158, 96);
+    color: white;
+    width: 40px;
+    height: 18px;
+    border: 1px solid rgb(248, 186, 129);
+    font-size: x-small;
+  }
+  
+  .task-pending-delete-btn {
+    background-color: rgb(220, 20, 60);
+    color: white;
+    width: 40px;
+    height: 18px;
+    border: 1px solid rgb(248, 186, 129);
+    font-size: x-small;
+  }
+  
+  .task-delete-finish-btn {
+    background-color: rgb(160, 158, 158);
+    color: white;
+    width: 79px;
+    height: 18px;
+    border: 1px solid rgb(196, 194, 194);
+    font-size: x-small;
+  }
+
+  .view-todolist h2{
+    text-align: start;
+    margin: 10px;
+  }
+  
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+  
+  .ReactModal__Overlay--after-open{
+    opacity: 1;
+  }
+  
+  .ReactModal__Overlay--before-close{
+    opacity: 0;
+  }
+  .ReactModal__Body--open,
+  .ReactModal__Html--open {
+    overflow: hidden;
+  }
+  
+  .content-div h4{
+    text-align: center;
+    width: 100%;
+    color: #1976d2;
+    margin-top: 227px;
+    font-size: 49px;
+  }
+  
