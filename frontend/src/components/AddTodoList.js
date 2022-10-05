@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import '../index.css';
+import './users.css'
 import swal from 'sweetalert';
 import { MDBBtn } from "mdb-react-ui-kit";
 import { useNavigate } from 'react-router-dom';
