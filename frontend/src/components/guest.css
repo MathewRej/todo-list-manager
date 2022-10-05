@@ -1,0 +1,58 @@
+.userpage {
+    padding: 0px !important;
+
+}
+
+.userpage-div {
+    display: flex;
+}
+
+.navbar-div {
+    background-color: #161618;
+
+}
+
+.navbar-content h1 {
+    color: white;
+    margin: 10px;
+    font-weight: bold;
+
+}
+
+.navbar-content {
+    display: flex;
+}
+
+.guest-heading-div h3 {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: -webkit-xxx-large;
+}
+
+.guest-register-div {
+    color: white;
+}
+
+.guest-register-div p {
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.guest-register-link {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: #1976d2;
+    text-align: center;
+}
+
+.guest-register-link-div {
+    text-align: center;
+}
+
+.guest-register-link-div a {
+    text-decoration: none !important;
+}
