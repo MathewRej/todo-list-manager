@@ -27,6 +27,42 @@ class Users(db.Model):
     email = db.Column(db.String)
     password = db.Column(db.Integer)
 
+
+def auth_middleware():
+    def token_required(f):
+        @wraps(f)
+        def decorated(*args, **kwargs):
+            token = ""
+            if "Authorization" in request.headers:
+                token = request.headers["Authorization"].split(" ")[1]
+            if not token:
+                return {
+                    "message": "Authentication Token is missing!",
+                    "data": None,
+                    "error": "Unauthorized"
+                }, 401
+            try:
+                data = jwt.decode(
+                    token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"])
+                current_user = Users.query.get(data["user_id"])
+                if current_user is None:
+                    return {
+                        "message": "Invalid Authentication token!",
+                        "data": None,
+                        "error": "Unauthorized"
+                    }, 401
+            except Exception as e:
+                return {
+                    "message": "Something went wrong",
+                    "data": None,
+                    "error": str(e)
+                }, 500
+
+            return f(current_user, *args, **kwargs)
+
+        return decorated
+    return token_required
+
 @app.route('/register', methods=['POST'])
 def register():
     name = request.json['name']
@@ -52,3 +88,22 @@ def register():
         db.session.add(user)
         db.session.commit()
         return jsonify({"message": "Registration done Successfully"}), 200
+
+@app.route("/login", methods=["POST"])
+def login():
+    email = request.json['email']
+    password = request.json['password']
+    user = Users.query.filter_by(email=email).first()
+    if (not user):
+        return jsonify({"error": "Email doesn't exist"}), 401
+    if check_password_hash(user.password, password):
+        accessToken = jwt.encode({
+            "user_id": user.id,
+            "email": user.email
+        }, app.config["JWT_SECRET_KEY"], algorithm="HS256")
+        return jsonify({"message": "LoggedIn Successfully",
+                        "status": True,
+                        "accessToken": accessToken,
+                        "data": {"username":user.name,
+                                 "user_id": user.id}}), 200
+    return jsonify({"error": "Password is incorrect"}), 401

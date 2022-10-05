@@ -15,5 +15,15 @@ class Users(Base):
     name = Column(String)
     email = Column(String)
     password = Column(String)
+    todolists = relationship("Todolist", back_populates = "user")
+class Todolist(Base):
+    __tablename__ = "todolists"
+    id = Column(Integer, primary_key =True)
+    name = Column(String)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable = False)
+    privacy = Column(String)
+    user = relationship("Users", back_populates = "todolists")
+    tasks = relationship("Task", back_populates = "todolist")
+
 
 Base.metadata.create_all(engine)

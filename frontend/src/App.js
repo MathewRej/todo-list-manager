@@ -19,7 +19,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/guest" element={<Guest />} />
-        <Route path="/users" element={<Users />} />
+        <Route path='/users/:userName' element={<Users />} />
+        <Route path='/users/:userName/todolists/:todolistName' element={<Users />} />
       </Routes>
     </BrowserRouter>
   );

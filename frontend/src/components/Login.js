@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import '../index.css'
 import './login.css'
+import axios from 'axios'
+import swal from 'sweetalert';
 
 
 const Login = () => {
@@ -38,6 +40,24 @@ const Login = () => {
             email,
             password,
         });
+        if (email === '' && password === '') {
+            axios({
+                method: 'post',
+                url: 'http://127.0.0.1:5000/login',
+                data: values
+            }).then((resp) => {
+                if (resp && resp.status) {
+                    localStorage.setItem("accessToken", resp?.data?.accessToken);
+                    const userName = resp?.data?.data?.username
+                    swal({ text: resp.data.message, icon: "success", closeModal: true  })
+                }
+              
+            }).catch((e) => {
+                if (e.response.status === 401) {
+                    swal({ text: "Invalid Email or Password", icon: "error", closeModal: true })
+                }
+            })
+        }
     }
     return (
         <div className="main-div">
