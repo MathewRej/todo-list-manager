@@ -3,9 +3,12 @@ import '../index.css'
 import './login.css'
 import axios from 'axios'
 import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
+
 
 
 const Login = () => {
+    const navigate = useNavigate()
     const [values, setValues] = useState(
         Object.assign({
             email: '',
@@ -49,9 +52,12 @@ const Login = () => {
                 if (resp && resp.status) {
                     localStorage.setItem("accessToken", resp?.data?.accessToken);
                     const userName = resp?.data?.data?.username
-                    swal({ text: resp.data.message, icon: "success", closeModal: true  })
+                    swal({ text: resp.data.message, icon: "success" }).then(() => navigate(`/users/${userName}/`));
                 }
-              
+                else {
+                    navigate('/')
+                }
+
             }).catch((e) => {
                 if (e.response.status === 401) {
                     swal({ text: "Invalid Email or Password", icon: "error", closeModal: true })
@@ -61,6 +67,7 @@ const Login = () => {
     }
     return (
         <div className="main-div">
+           
             <div className="login-div">
                 <div className="login-heading">
                     <h2>Log In</h2>
