@@ -4,10 +4,13 @@ import './login.css'
 import axios from 'axios'
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
+import { login } from "../redux/userSlice";
+import { useDispatch } from "react-redux";
 
 
 
 const Login = () => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [values, setValues] = useState(
         Object.assign({
@@ -50,9 +53,16 @@ const Login = () => {
                 data: values
             }).then((resp) => {
                 if (resp && resp.status) {
+                    console.log("faadf",resp.data.data)
                     localStorage.setItem("accessToken", resp?.data?.accessToken);
                     const userName = resp?.data?.data?.username
                     swal({ text: resp.data.message, icon: "success" }).then(() => navigate(`/users/${userName}/`));
+                      dispatch(
+                        login({
+                            name: userName,
+                            loggedIn: true
+                        })
+                    )
                 }
                 else {
                     navigate('/')

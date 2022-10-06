@@ -14,7 +14,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { red } from "@mui/material/colors";
 import UserContent from "./UserContent";
-import swal from "sweetalert"
+import swal from "sweetalert";
+import { todolist } from '../redux/userSlice'
+import { useDispatch } from "react-redux";
 
 const customStyles = {
     overlay: {
@@ -44,7 +46,8 @@ const customStyles = {
 };
 
 const User = () => {
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     useEffect(() => {
         axios({
             method: 'get',
@@ -68,10 +71,18 @@ const User = () => {
                 Authorization: "Bearer " + localStorage.getItem("accessToken")
             }
         }).then(resp => {
+            if(resp && resp.data){
+                setData(
+                    resp.data.todolists
+                )
+                dispatch(
+                    todolist(
+                    resp.data.todolists
+                        )
+                )
+            }
+            
 
-            setData(
-                resp.data.todolists
-            )
         })
     }
     const [data, setData] = useState([])

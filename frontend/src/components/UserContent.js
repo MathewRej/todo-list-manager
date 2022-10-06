@@ -4,6 +4,8 @@ import AddIcon from '@mui/icons-material/Add';
 import AddTodoItem from './AddTodoItem';
 import Modal from 'react-modal';
 import axios from 'axios';
+import { task } from '../redux/userSlice';
+import { useDispatch } from 'react-redux';
 
 const customStyles = {
   overlay: {
@@ -31,6 +33,7 @@ const customStyles = {
   },
 };
 const UserContent = ({ taskDetails }) => {
+  const dispatch = useDispatch()
   const [tasks, setTasks] = useState()
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const closeModal = () => (
@@ -64,7 +67,14 @@ const UserContent = ({ taskDetails }) => {
       headers: { Authorization: "Bearer " + localStorage.getItem("accessToken") }
     }).then(
       resp => {
-        setTasks(resp.data.sorted_task)
+        if(resp && resp.data){
+          setTasks(resp.data.sorted_task)
+          dispatch(
+            task(
+            resp.data.sorted_task
+          ))
+        }
+        
       }
     )
   }
