@@ -69,10 +69,10 @@ const UserContent = ({ taskDetails }) => {
       resp => {
         if(resp && resp.data){
           setTasks(resp.data.sorted_task)
-          dispatch(
-            task(
-            resp.data.sorted_task
-          ))
+          // dispatch(
+          //   task(
+          //   resp.data.sorted_task
+          // ))
         }
         
       }

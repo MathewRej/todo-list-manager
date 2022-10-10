@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from '../redux/userSlice'
 import todolistReducer from '../redux/userSlice'
-import taskReducer from '../redux/userSlice'
+// import taskReducer from '../redux/userSlice'
 
 
 export default configureStore({
@@ -11,7 +11,7 @@ export default configureStore({
     reducer:{
         todolist: todolistReducer
     },
-    reducer:{
-        task: taskReducer
-    }
+    // reducer:{
+    //     task: taskReducer
+    // }
 })

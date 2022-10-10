@@ -15,19 +15,19 @@ export const userSlice = createSlice({
         todolist:(state, action) => {
             state.todolist = action.payload;
         },
-        task:(state, action) => {
-            state.task = action.payload
-        }
+        // task:(state, action) => {
+        //     state.task = action.payload
+        // }
 
 
     }
 })
 
-export const {login, todolist, task} =userSlice.actions;
+export const {login, todolist} =userSlice.actions;
 
 export const getcurrentUser = (state) => state.user.user
 export const getTodoData = (state) => state.todolist.todolist
-export const getTask = (state) => state.task.task
+// export const getTask = (state) => state.task.task
 
 
 export default userSlice.reducer;

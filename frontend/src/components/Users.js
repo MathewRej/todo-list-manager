@@ -15,8 +15,8 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { red } from "@mui/material/colors";
 import UserContent from "./UserContent";
 import swal from "sweetalert";
-import { todolist } from '../redux/userSlice'
-import { useDispatch } from "react-redux";
+import { getTodoData, todolist } from '../redux/userSlice'
+import { useDispatch, useSelector } from "react-redux";
 
 const customStyles = {
     overlay: {
@@ -48,6 +48,7 @@ const customStyles = {
 const User = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const todoData = useSelector(getTodoData)
     useEffect(() => {
         axios({
             method: 'get',
@@ -116,7 +117,9 @@ const User = () => {
         }).then(resp => {
             if (resp.data.status = true) {
                 getTodoList()
+                navigate(`/users/${user}`)
                 window.location.reload()
+                
             }
         })
     }
@@ -152,7 +155,7 @@ const User = () => {
             </div>
             <div className="userpage-div">
                 <div className="sidebar-div">
-                    {data.length == 0 ? <div className="sidebar-heading">
+                    {todoData.length == 0 ? <div className="sidebar-heading">
                         <h2>Welcome</h2>
                         <h4>{user}</h4>
                     </div> :
@@ -164,7 +167,7 @@ const User = () => {
                             ariaHideApp={false}
                             onRequestClose={closeModal}
                             style={customStyles}>
-                            <AddTodoList listData = {getTodoList} listDetails = {data} closeModal = {closeModal} />
+                            <AddTodoList listData = {getTodoList} listDetails = {todoData} closeModal = {closeModal} />
                         </Modal>
                     </div>
                     <div className="addtodolist-div">
@@ -173,14 +176,14 @@ const User = () => {
                     </div>
                     <div className="todolist-name-div">
                         <table className="todolist-ul">
-                            {data.map((item, key) => {
+                            {todoData.map((item, key) => {
                                 return (
                                     <tr key={key}>
                                         <td><Link to={`/users/${item.username}/todolists/${item.name}`}><button className={item.id == content.id ? "selected-todolist" : "todolist-name"} onClick={() => setContent(item)} >{item.name}</button></Link></td>
                                         <td><label className={item.privacy == "private" ? "todolist-privacy-private" : "todolist-privacy-public"} >{item.privacy}</label></td>
                                         <button className="delete-btn" onClick={() => {
                                             listDeleteWarning((item.id), (item.name))
-                                            navigate(`/users/${user}`)
+                                            
                                         }}><DeleteForeverIcon sx={{ color: red[800] }} /></button>
                                     </tr>
                                 )
